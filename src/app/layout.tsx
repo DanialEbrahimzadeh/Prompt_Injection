@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "The Vulnerable Recruiter — AI Prompt Injection Lab",
+  title: "AI Prompt Injection Lab — Cybersecurity Workshop",
   description:
-    "A cybersecurity workshop sandbox for learning prompt injection attacks against an AI HR assistant.",
+    "An interactive cybersecurity sandbox for learning prompt injection attacks. Developed by Danial Ebrahimzadeh for educational purposes.",
 };
 
 export default function RootLayout({
@@ -17,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("h-full antialiased", "font-sans", geist.variable)}>
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -26,7 +22,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col bg-gradient-dark bg-grid" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}>
+      <body className="min-h-full antialiased" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}>
         {children}
       </body>
     </html>
